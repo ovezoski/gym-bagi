@@ -38,9 +38,33 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-       Product::create([
-        'name' => request('name')
+      $this->validate($request, [
+        'name' => 'required',
+        'description' => 'required',
+        'photo' => 'image'
       ]);
+
+    if( $request->hasFile('photo')) {
+
+        $fileNameWithExt = $request->file('photo')->getClientOriginalName();
+        $fileName = pathInfo($fileNameWithExt, PATHINFO_FILENAME);
+        $fileExtension = $request->file('photo')->getClientOriginalExtension();
+
+        $fullFileName = $fileName.'_'.time().'.'.$fileExtension;
+
+        $request->file('photo')->storeAs('public/productPhotos', $fullFileName);
+
+    }
+    else{
+      $fullFileName = 'nophoto.jpg';
+    }
+
+     Product::create([
+      'name' => request('name'),
+      'description' => request('description'),
+      'photo' => $fullFileName
+     ]);
+
       return redirect('/product');
     }
 

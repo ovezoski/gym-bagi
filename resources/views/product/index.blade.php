@@ -6,6 +6,7 @@
 
   <div class="">
     {{$product->name}}
+    <img src="{{'/storage/productphotos/'.$product->photo}}" alt="">
   </div>
 
 @endforeach

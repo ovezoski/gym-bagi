@@ -76,10 +76,6 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
-
-            'sslmode' => 'prefer',
-
-        
             'sslmode' => 'require',
         ],
 
