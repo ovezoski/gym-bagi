@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "shopbagi",
+  "private_key_id": "57e2256e24e220c85dca1fafe8f15bedb02ad19b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCjHLfBxV+J27pg\nfwdsgy+0wxWRwNC0qeSheUBZ+ZdkGBTXRCLDKFl1Q3XRGUcE1jWHhmNHw6qddu9k\nGCpCC3CmSwv816wMONKVx55okZrt+jf4BI0fUX/93rYPqytVum9vN8+/lGJA3Cqj\n8Rv1Yn2toyDKFEyOqrN0jJ1XmCT2ng4ha/CS8Fxo+m6RVcVNrHC/2SX66MHMz2rC\nK6drNsO8njZGQhx1zN9ajCL5A9iOxhjcLq+eKo4KhUeU72CZa7bdR2Wq0a4uHuM4\ntVI0Ev+WLDEKxpScsMAt81xrfXvA48ECR/WPUfBI9wIKWcOQMrutGKjGga/em6aH\nHSH3O66zAgMBAAECggEAAX7s7Hj75E7AicwAbG1TjavQUdLb1xxLvXNYNLsGOWPD\nJSo5y2JeV6XzuaQqs4+nVAPWezz/HoyNq3RRRuPF97BufrYXnNEUlU0MVdcn/ZCy\n3LJl/OiJbPGS59fhANtB1FpFrHMW55NdTL2UTQ7HKkV5soC3JwPHu4TimIALrrtG\nkkmJzjD8/1NCg6DrEcH0aaZrQlnEi1JoVNgL4huQN0HiJhO53TM3cwnelQkWDw3c\nACqnYRbsaaAF7tJTonAbBeyoUaqUtEYAukuWvNeX3QK73BczW2oVnIJ9D9936K1J\ndyvNRgGLLFlMQO5S3maK0knpJ4nPqa8hB/9DyZ/RyQKBgQDafJGh+RdM3T/KjSKL\nnghZChVyu20UU1FSwQp4O1rnkLnzb0Og00L2X5CNpx/TjU/lc7D6V52eFN03eE6l\nUdvqM0t7Y1ZcM/Z2tnRRziRz/X+6H4FT46rREWJdagwng4KcQ2Oqncqb44GS2Q5S\nGypEdHk0LUU1Lx1AnPxI9Bx/zwKBgQC/HjQk+OyTCGzCTo7vSB+MKh9RzVCzZlhU\nzyG5+7Ouq6LqrwHqakcvJ5KIlOg9LBedddfHRmvsvoW/rBCQW7FA7/objWGa4Lms\ns4eyQ7be06CXyt9CKiO9cpEttPhzRdCu/IqnCC6ngPH7qSsn4lQxAqPzxLLPPW0O\nHR31LC5X3QKBgQCrn55mNVxwLHuniCXStlioWJtwfHm6tZf0AV9QAo/txmnLJ2Ng\nOZMoJPlPzC/b5e0UuEQU4i4Vtx3uLLracerllVV9nxJ/avH3XmsQt3U7B64FbioQ\n042inJ0/88WIZG18ghMQOtKkkZl+2LG/HUeebj+nFMiAdnnr/2TNibO5UQKBgCwU\nADzCuHVUzRinW6nuPXBrSpvoOYOWyCqPNx0Y4yEW7tUnlc6FwnMqsk4T4dgx8iRb\nyG9qW3vXmStSuONCcogikNGH8wnwaIJfSZ2gpm2P64r2vDUbWPDZmogrI94aLP4e\nuq+5YGE7iRPcuVpShc5j6IJRTFglt6A4sO8ZyHp1AoGAI2vXsruFWv+M/u2V5RvE\nNHP3+1JeC/wWmHlKVPXUydvFpTrDfWHFsEsSqnjaJhaO2sha2gWLA9psnEYLwTNb\nB4I/hPCTwGYq21RlFpA6u0Aettgnelg3Q2qKCTe0+89+toIO5g5uBtgpnHqnKakg\nhOKHFhx/Zu0/CgSKv+STx5o=\n-----END PRIVATE KEY-----\n",
+  "client_email": "shopbagi@appspot.gserviceaccount.com",
+  "client_id": "112715337688111980043",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/shopbagi%40appspot.gserviceaccount.com"
+}

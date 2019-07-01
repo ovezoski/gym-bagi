@@ -11,9 +11,11 @@ class HomeController extends Controller
      *
      * @return void
      */
+     protected $redirectTo = '/product';
+
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->only('index');
     }
 
     /**
@@ -23,6 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('welcome');
+    }
+
+    public function envs()
+    {
+      return [
+
+        config('database.connections.mysql.database')
+
+      ];
     }
 }

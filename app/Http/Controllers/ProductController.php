@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -12,11 +13,18 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     protected $redirectTo = '/product';
+
+       public function __construct()
+       {
+            $this->middleware('auth')->except('index', 'show');
+       }
+
     public function index()
     {
       $products = Product::all();
-
-      return view('product.index')->with('products', $products);
+      $categories = Category::all();
+      return view('product.index', ['products' => $products, 'categories' => $categories]);
         //
     }
 
@@ -27,8 +35,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-      return view('product.create');
+      $categories = Category::all();
+      return view('product.create', ['categories' => $categories]);
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -41,29 +52,36 @@ class ProductController extends Controller
       $this->validate($request, [
         'name' => 'required',
         'description' => 'required',
-        'photo' => 'image'
+        'price' => 'required',
+        'photo' => 'image',
+        'category_id' => 'integer'
       ]);
 
     if( $request->hasFile('photo')) {
 
-        $fileNameWithExt = $request->file('photo')->getClientOriginalName();
-        $fileName = pathInfo($fileNameWithExt, PATHINFO_FILENAME);
-        $fileExtension = $request->file('photo')->getClientOriginalExtension();
+        // $fileNameWithExt = $request->file('photo')->getClientOriginalName();
+        // $fileName = pathInfo($fileNameWithExt, PATHINFO_FILENAME);
+        // $fileExtension = $request->file('photo')->getClientOriginalExtension();
+        //
+        // $fullFileName = $fileName.'_'.time().'.'.$fileExtension;
 
-        $fullFileName = $fileName.'_'.time().'.'.$fileExtension;
+        // $request->file('photo')->storeAs('public/productPhotos', $fullFileName);
 
-        $request->file('photo')->storeAs('public/productPhotos', $fullFileName);
+      $fullFileName =  $request->file('photo')->store('productPhotos');
 
     }
     else{
       $fullFileName = 'nophoto.jpg';
     }
+//return $fullFileName;
 
      Product::create([
       'name' => request('name'),
       'description' => request('description'),
-      'photo' => $fullFileName
-     ]);
+      'photo' => "https://storage.googleapis.com/shop-bagi/".$fullFileName,
+      'price' => request('price'),
+      'category_id' => request('category_id'),
+    ]);
 
       return redirect('/product');
     }
@@ -76,7 +94,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+      return view('product.show', ['product'=> $product]);
     }
 
     /**
@@ -87,7 +105,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+      $categories = Category::all();
+
+      return view('product.edit', ['product' => $product, 'categories' => $categories]);
     }
 
     /**
@@ -99,7 +119,11 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->name = request('name');
+        $product->description = request('description');
+        $product->category_id = request('category_id');
+        $product->save();
+        return back();
     }
 
     /**
@@ -110,6 +134,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+      $category = $product->category_id;
+      Product::destroy($product->id);
+      return redirect('/category/'.$category);
     }
 }

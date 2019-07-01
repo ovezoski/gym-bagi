@@ -1,0 +1,21 @@
+runtime: php72
+
+env_variables:
+
+  APP_KEY: base64:0fceIh1LkXetupnRUSZNs4luOIr91NwbcnoFbSnohmI=
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+
+  DB_DATABASE: laravel
+  DB_USERNAME: root
+  DB_PASSWORD: mozimozi
+  DB_SOCKET: "/cloudsql/shopbagi:europe-west6:shop-db"
+
+handlers:
+  - url: /static
+    static_dir: public
+
+  - url: /.*
+    script: auto

@@ -63,10 +63,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      if($data['name'] == 'teo')
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+      else return "You are not allowed to create a profile!";
     }
 }

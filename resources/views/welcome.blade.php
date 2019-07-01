@@ -81,11 +81,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Prodavnice
                 </div>
 
                 <div class="links">
                     <a href="/product/create">Create a product</a>
+                    <a href="/category/create"> Create a category </a>
+                    <a href="/product"> Products </a>
+                    <a href="/order">Orders</a>
 
                 </div>
             </div>
